@@ -1,0 +1,249 @@
+@import 'neat';
+@mixin margin-y($top,$bottom: $top){
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+@mixin margin-x($left,$right: $left){
+  margin-left: $left;
+  margin-right: $right;
+}
+@mixin padding-y($top,$bottom: $top){
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+@mixin padding-x($left,$right: $left){
+  padding-left: $left;
+  padding-right: $right;
+}
+small{
+  color:$grey-light;
+  display:block;
+}
+.changelog{
+  transition:all 0.5s ease-in-out;
+  margin:auto;
+  margin-bottom:0;
+  max-width:300px;
+  text-align:left;
+  max-height:0;
+  overflow:auto;
+}
+.changelog.active{
+  margin-bottom:40px;
+  max-height:200px;
+}
+a{
+  &:link{    color: $grey;}
+  &:visited{ color: $grey;}
+  &:hover{   color: $grey;}
+  &:active{  color: $grey;}
+}
+hr{
+  width:20%;
+  @include margin-x(auto);
+  height:5px;
+}
+h1,h2{
+  font-weight:500;
+}
+h1{font-size:3em;}
+h2{
+  margin-bottom:10px;
+}
+h3{font-family:$proxima;
+  font-size:1.1em;}
+h4{
+  font-family:$proxima;
+text-transform:uppercase;
+margin-bottom:-10px;
+margin-top:30px;
+font-size:1em;}
+
+body{
+  text-rendering:optimizeLegibility;
+  font-feature-settings:"liga","dlig","kern";
+  background-color:$grey-lighter;
+}
+.proxima{
+  font-family:$proxima;
+}
+.din{
+  font-family:$din;
+}
+aside{
+  font-style:italic;
+  font-size:.9em;
+  margin-top:15px;
+  margin-left:5px;
+  color:$grey;
+}
+section{
+  width:90%;
+  max-width:480px;
+  background-color:#FFFFFF;
+  @media(max-width:600px){
+    padding:40px;
+  }
+  padding:60px;
+  @include margin-y(50px);
+  @include margin-x(auto);
+  &>p{
+    @include margin-y(20px);
+  }
+  .sample{
+    @include margin-y(20px);
+    //@include padding-y(15px);
+    @include padding-x(15px);
+    border-width:0;
+    border-style:solid;
+    border-color:$grey-lighter;
+    border-left-width:5px;
+    display:block;
+    //background-color:lighten($grey-lighter,5);
+    font-size:1em;
+    .caption{
+      color:$grey;
+      font-size:.9em;
+      margin-bottom:0;
+    }
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+}
+header{
+  @extend section;
+  width:100%;
+  max-width:100%;
+  @include margin-x(0);
+  @include margin-y(0);
+  text-align:center;
+  a.related{
+    font-size:.8em;
+    text-transform:uppercase;
+  }
+}
+nav#toc{
+  ul{
+    overflow:hidden;
+    counter-reset:section;
+    li:before{
+      counter-increment:section;
+      content:counters(section,".")" ";
+    }
+  }
+  
+  font-feature-settings:"tnum";
+  max-width:360px;
+  @include margin-x(auto);
+  counter-reset:level-one-counter;
+  li.active{
+    &>ul.toc__level-two{
+      opacity:1;
+      max-height:150px;
+      transform:translate(0,0);
+    }
+  }
+  overflow:hidden;
+  text-align:left;
+  /*.toc__level-one{
+    &>li:before{
+      content:counter(level-one-counter)" ";
+      counter-increment:level-one-counter;
+    }
+  }*/
+  .toc__level-two{
+    margin-left:20px;
+    opacity:0;
+    transition:all 0.5s ease-in;
+    max-height:0;
+    transform:translate(-15px,0);
+    li{
+      color:$grey-dark;
+      font-size:0.8em;
+      line-height:180%;
+      &:first-child{
+        margin-top:5px;
+      }
+      &:last-child{
+        margin-bottom:5px;
+      }
+    }
+  }
+}
+.color-block{
+    font-family:$din;
+    padding:20px;
+    text-align:justify;
+    text-justify:inter-word;
+    @include margin-y(20px);
+    margin-bottom:0px;
+    letter-spacing:1px;
+    font-smoothing:subpixel-antialias;
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+.greenBG{
+  background-color: $green;
+}
+.greenDarkBG{
+  background-color: $green-dark;
+  color:$grey-lighter;
+  
+}
+.greyDarker{
+  background-color: $grey-darker;
+  color:white;
+}
+.greyDark{
+  background-color: $grey-dark;
+  color:white;
+}
+.grey{
+  background-color: $grey;
+}
+.greyLight{
+  background-color: $grey-light;
+}
+.greyLighter{
+  background-color: $grey-lighter;
+}
+.accentRed{
+  background-color: $accent-red;
+  color:white;
+}
+
+/* MAKETIME HEADING CLASSES */
+.mth1,.mth2,.mth3,.mth4,.mth5,.mth6{
+  padding:0;
+  margin:0;
+}
+.mth1,.mth2,.mth3,.mth4,.mth5{
+  text-transform:uppercase;
+  font-family: $din;
+  font-weight: 500;
+  font-size: 72px;
+}
+.mth2{font-size: 36px;}
+.mth3{font-size: 26px;}
+.mth4{font-size: 18px;}
+.mth5{font-size: 14px;}
+.mth6{
+  text-transform:uppercase;
+  font-family: $proxima;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing:0.5px;
+}
+#headings{
+  .sample{
+    margin-bottom:30px;
+  }
+}
+.coming-soon{
+  @include margin-y(20px);
+  margin-bottom:-10px;
+  margin-left:20px;
+  color:$grey-light;
+}
