@@ -1,165 +1,233 @@
-header.title
-  small v1.0.1 05/27/2015
-    .changelog
-      article
-        strong 1.0.1
-        ul
-          li Added colors
-          li Added this changelog
-      article
-        strong 1.0.0
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quos sed accusamus rem itaque sit, cupiditate exercitationem. Maxime eveniet necessitatibus quibusdam ea, quia dignissimos blanditiis porro reprehenderit eius doloribus laborum!
-      
-  h1.head MAKETIME PATTERN LIBRARY
-  a(href="").related.
-    writing style guide &rsaquo;
-  hr
-  nav#toc
-    ul.toc__level-one
-      li 
-        a(href="#typefaces") Typefaces
-      li Colors
-        ul.toc__level-two
-          li 
-            a(href="#greens") Greens
-          li 
-            a(href="#greys") Greys
-          li 
-            a(href="#accents") Accents
-      li Typography
-        ul.toc__level-two
-          li 
-            a(href="#headings") Headings
-          li 
-            a(href="#bodycopy") Body Copy
-          li 
-            a(href="#quotes") Quotes
-          li 
-            a(href="#emphasis") Emphasis
-          li 
-            a(href="#abbreviations") Abbreviations
-      li Patterns
-        ul.toc__level-two
-          li 
-            a(href="#forms") Forms
-          li 
-            a(href="#buttons") Buttons
-          li 
-            a(href="#modals") Modals
-          li 
-            a(href="#navigation") Navigation
-          li 
-            a(href="#iconography") Iconography
-          li
-            a(href="#backgrounds") Background Images
+doctype html
+html(lang="en")  
+  head
+    title MakeTime Pattern Library
+    script(type='text/javascript',src="//use.typekit.net/kzi4urk.js")
+    script(type='text/javascript').
+      try{Typekit.load();}catch(e){}
+    link(rel='stylesheet',href='css/normalize.css')
+    link(rel='stylesheet',href='css/style.css')
+  body
 
-section#typefaces
-  h2.secTitle Typefaces
-  h4 Proxima Nova
-  p
-    | Proxima Nova (2005) bridges the gap between typefaces like Futura and Akzidenz Grotesk. The result is a hybrid that combines modern proportions with a geometric appearance. I originally released it in 1994 as Proxima Sans (now discontinued). I expanded the original six fonts (three weights with italics) into a full-featured and versatile family of 48 fonts (eight weights in three widths with italics). In the last few years, Proxima Nova has become one of the most popular web fonts, in use on thousands of websites around the world.
-  .sample
-    p.proxima The quick onyx goblin jumps over the lazy dwarf
-    .caption (proxima nova, regular, 16px)
-  //
-    .sample
-      i
-        p.proxima The quick onyx goblin jumps over the lazy dwarf
-      .caption (proxima nova, italic, 16px)
-    .sample
-      strong
-        p.proxima The quick onyx goblin jumps over the lazy dwarf
-      .caption (proxima nova, bold, 16px)
-  h4 Din
-  p
-    | 1994, San Francisco: Albert-Jan Pool and Erik Spiekermann took a cab together from the ATypI conference to the airport. Spiekermann knew that Pool’s employer had just gone bust, so he told him that if he wanted to earn some money with type design, he should have a look at fonts such as OCR and DIN. He invited Pool to Berlin to discuss the idea in detail.
-  .sample
-    p.din Foxy diva Jennifer Lopez wasn’t baking my quiche. 
-    .caption (din, regular, 16px)
-  //
-    .sample
-      i
-        p.din Foxy diva Jennifer Lopez wasn’t baking my quiche. 
-      .caption (din, italic, 16px)
-    .sample
-      strong
-        p.din Foxy diva Jennifer Lopez wasn’t baking my quiche.
-      .caption (proxima nova, bold, 16px)
+    header.title
+      small v1.0.1 05/27/2015
+        .changelog
+          article
+            strong 1.0.1
+            ul
+              li Added colors
+              li Added this changelog
+          article
+            strong 1.0.0
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quos sed accusamus rem itaque sit, cupiditate exercitationem. Maxime eveniet necessitatibus quibusdam ea, quia dignissimos blanditiis porro reprehenderit eius doloribus laborum!
+      h1.head MAKETIME PATTERN LIBRARY
+      a(href="").related.
+        writing style guide &rsaquo;
+      hr
+      nav#toc
+        ul.toc__level-one
+          li 
+            a(href="#typefaces") Typefaces
+          li Colors
+            ul.toc__level-two
+              li 
+                a(href="#greens") Greens
+              li 
+                a(href="#greys") Greys
+              li 
+                a(href="#accents") Accents
+          li Typography
+            ul.toc__level-two
+              li 
+                a(href="#headings") Headings
+              li 
+                a(href="#bodycopy") Body Copy
+              li 
+                a(href="#quotes") Quotes
+              li 
+                a(href="#emphasis") Emphasis
+              li 
+                a(href="#abbreviations") Abbreviations
+          li Patterns
+            ul.toc__level-two
+              li 
+                a(href="#forms") Forms
+              li 
+                a(href="#buttons") Buttons
+              li 
+                a(href="#modals") Modals
+              li 
+                a(href="#navigation") Navigation
+              li 
+                a(href="#iconography") Iconography
+              li
+                a(href="#backgrounds") Background Images
 
-section#colors
-  h2.secTitle Colors
-  p
-    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque natus, quia nobis dolor animi unde, optio maxime fuga illum ad error quos praesentium atque labore culpa, consequuntur ullam! Minus!
-  article.sub#greens
-    h4.subSecTitle Greens
-    .color-block.greenBG #FF4302
-    .color-block.greenDarkBG #FF4302
-    aside
-      | The darker green is provided for use only with MakeTime's primary green. When used by itself, $mt-green-darker looks out of place.
-  article.sub#greys
-    h4.subSecTitle Greys
-    .color-block.greyDarker #333333
-    .color-block.greyDark #666666
-    .color-block.grey #999999
-    .color-block.greyLight #CCCCCC
-    .color-block.greyLighter #ECECEC
-  article.sub#accents
-    h4.subSecTitle Accents
-    .color-block.accentRed #FF4302
-    aside
-      | The red accent can force anything to the top of the visual heirarchy, and should be used sparingly. Excessive use of the red accent looks heavy-handed and quickly becomes an eyesore.
-section#typography
-  h2.secTitle Typography
-  article.sub#headings
-    h4.subSecTitle Headings
-    .sample
-      h1.mth1 Heading 1
-      .caption 72px Din Bold Uppercase
-    .sample
-      h2.mth2 heading 2
-      .caption 36px Din Bold Uppercase
-    .sample
-      h3.mth3 Heading 3
-      .caption 26px Din Bold Uppercase
-    .sample
-      h4.mth4 Heading 4
-      .caption 18px Din Bold Uppercase
-    .sample
-      h5.mth5 Heading 5
-      .caption 14px Din Bold Uppercase
-    .sample
-      h6.mth6 Heading 6
-      .caption 14px Proxima Nova Bold Uppercase
-  article.sub#bodycopy
-    h4.subSecTitle Body Copy
-    .sample
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ab commodi quas a eaque laborum quae numquam, at labore voluptates, eum quam harum, ut magnam maxime. Inventore saepe aperiam pariatur.
-      .caption 16px Proxima Nova Regular
-  article.sub#buttons
-    h4.subSecTitle Quotes
-    .coming-soon Coming Soon
-  article.sub
-    h4.subSecTitle Emphasis
-    .coming-soon Coming Soon
-  article.sub
-    h4.subSecTitle Abbreviations
-    .coming-soon Coming Soon
-section#patterns
-  h2.secTitle Patterns
-  article.sub#forms
-    h4.subSecTitle Forms
-    .coming-soon Coming Soon
-  article.sub#buttons
-    h4.subSecTitle Buttons
-    h5 .btn-primary
-    h5 .btn-grey
-    h5 .btn-ghost
-  article.sub
-    h4.subSecTitle Modals
-    .coming-soon Coming Soon
-  article.sub
-    h4.subSecTitle Navigation
-    .coming-soon Coming Soon
-  article.sub
-    h4.subSecTitle Iconography
-    .coming-soon Coming Soon
+    section#typefaces
+      h2.secTitle Typefaces
+      h4 Proxima Nova
+      p
+        | Proxima Nova (2005) bridges the gap between typefaces like Futura and Akzidenz Grotesk. The result is a hybrid that combines modern proportions with a geometric appearance. I originally released it in 1994 as Proxima Sans (now discontinued). I expanded the original six fonts (three weights with italics) into a full-featured and versatile family of 48 fonts (eight weights in three widths with italics). In the last few years, Proxima Nova has become one of the most popular web fonts, in use on thousands of websites around the world.
+      .sample
+        p.proxima The quick onyx goblin jumps over the lazy dwarf
+        .caption (proxima nova, regular, 16px)
+      //
+        .sample
+          i
+            p.proxima The quick onyx goblin jumps over the lazy dwarf
+          .caption (proxima nova, italic, 16px)
+        .sample
+          strong
+            p.proxima The quick onyx goblin jumps over the lazy dwarf
+          .caption (proxima nova, bold, 16px)
+      h4 Din
+      p
+        | 1994, San Francisco: Albert-Jan Pool and Erik Spiekermann took a cab together from the ATypI conference to the airport. Spiekermann knew that Pool&#8217;s employer had just gone bust, so he told him that if he wanted to earn some money with type design, he should have a look at fonts such as OCR and DIN. He invited Pool to Berlin to discuss the idea in detail.
+      .sample
+        p.din Foxy diva Jennifer Lopez wasn&#8217;t baking my quiche. 
+        .caption (din, regular, 16px)
+      //
+        .sample
+          i
+            p.din Foxy diva Jennifer Lopez wasn’t baking my quiche. 
+          .caption (din, italic, 16px)
+        .sample
+          strong
+            p.din Foxy diva Jennifer Lopez wasn’t baking my quiche.
+          .caption (proxima nova, bold, 16px)
+
+    section#colors
+      h2.secTitle Colors
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque natus, quia nobis dolor animi unde, optio maxime fuga illum ad error quos praesentium atque labore culpa, consequuntur ullam! Minus!
+      article.sub#greens
+        h4.subSecTitle Greens
+        .color-block.greenBG #FF4302
+        .color-block.greenDarkBG #FF4302
+        aside
+          | The darker green is provided for use only with MakeTime's primary green. When used by itself, $mt-green-darker looks out of place.
+      article.sub#greys
+        h4.subSecTitle Greys
+        .color-block.greyDarker #333333
+        .color-block.greyDark #666666
+        .color-block.grey #999999
+        .color-block.greyLight #CCCCCC
+        .color-block.greyLighter #ECECEC
+      article.sub#accents
+        h4.subSecTitle Accents
+        .color-block.accentRed #FF4302
+        aside
+          | The red accent can force anything to the top of the visual heirarchy, and should be used sparingly. Excessive use of the red accent looks heavy-handed and quickly becomes an eyesore.
+
+    section#typography
+      h2.secTitle Typography
+      article.sub#headings
+        h4.subSecTitle Headings
+        .sample
+          h1.mth1 Heading 1
+          .caption 72px Din Bold Uppercase
+        .sample
+          h2.mth2 heading 2
+          .caption 36px Din Bold Uppercase
+        .sample
+          h3.mth3 Heading 3
+          .caption 26px Din Bold Uppercase
+        .sample
+          h4.mth4 Heading 4
+          .caption 18px Din Bold Uppercase
+        .sample
+          h5.mth5 Heading 5
+          .caption 14px Din Bold Uppercase
+        .sample
+          h6.mth6 Heading 6
+          .caption 14px Proxima Nova Bold Uppercase
+      article.sub#bodycopy
+        h4.subSecTitle Body Copy
+        .sample
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ab commodi quas a eaque laborum quae numquam, at labore voluptates, eum quam harum, ut magnam maxime. Inventore saepe aperiam pariatur.
+          .caption 16px Proxima Nova Regular
+      article.sub#buttons
+        h4.subSecTitle Quotes
+        .coming-soon Coming Soon
+      article.sub#emphasis
+        h4.subSecTitle Emphasis
+        .coming-soon Coming Soon
+      article.sub#abbreviations
+        h4.subSecTitle Abbreviations
+        .coming-soon Coming Soon
+
+    section#patterns
+      h2.secTitle Patterns
+      article.sub#forms
+        h4.subSecTitle Forms
+        .coming-soon Coming Soon
+      article.sub#buttons
+        h4.subSecTitle Buttons
+        h5 .btn-primary
+        table
+          tr
+            td base
+            td  
+              button.btn.btn-primary MAKETIME
+          tr  
+            td hover
+            td  
+              button.btn.btn-primary.hover MAKETIME
+          tr  
+            td active
+            td
+              button.btn.btn-primary.active MAKETIME
+          tr  
+            td disabled
+            td 
+              button.btn.btn-primary(disabled="disabled") MAKETIME
+        h5 .btn-grey
+        table
+          tr
+            td base
+            td  
+              button.btn.btn-grey MAKETIME
+          tr  
+            td hover
+            td  
+              button.btn.btn-grey.hover MAKETIME
+          tr  
+            td active
+            td
+              button.btn.btn-grey.active MAKETIME
+          tr  
+            td disabled
+            td 
+              button.btn.btn-grey(disabled="disabled") MAKETIME
+        h5 .btn-ghost
+        table
+          tr
+            td base
+            td  
+              button.btn.btn-ghost MAKETIME
+          tr  
+            td hover
+            td  
+              button.btn.btn-ghost.hover MAKETIME
+          tr  
+            td active
+            td
+              button.btn.btn-ghost.active MAKETIME
+          tr  
+            td disabled
+            td
+              button.btn.btn-ghost(disabled="disabled") MAKETIME
+        h5 .btn-black
+        p WIP
+      article.sub#modals
+        h4.subSecTitle Modals
+        .coming-soon Coming Soon
+      article.sub#navigation
+        h4.subSecTitle Navigation
+        .coming-soon Coming Soon
+      article.sub#iconography
+        h4.subSecTitle Iconography
+        .coming-soon Coming Soo
+    
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="js/index.js")
