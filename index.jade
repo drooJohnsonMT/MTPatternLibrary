@@ -2,13 +2,45 @@ doctype html
 html(lang="en")  
   head
     title MakeTime Pattern Library
-    script(type='text/javascript',src="//use.typekit.net/kzi4urk.js")
+    script(type='text/javascript',src="https://use.typekit.net/kzi4urk.js")
     script(type='text/javascript').
-      try{Typekit.load();}catch(e){}
+      try{
+        Typekit.load({
+          loading:  function() {},
+          active:   function() {},
+          inactive: function() {
+            $('#font-warning').addClass('font-warning-active');
+          }
+        });
+      } catch(e) {}
     link(rel='stylesheet',href='css/normalize.css')
     link(rel='stylesheet',href='css/style.css')
   body
-
+  
+    div.font-warning-container#font-warning
+      div.font-warning-body
+        h2(style="font-family:Helvetica Neue, Helvetica, Arial;text-align:center;") HOLD UP
+        br
+        p(style="font-family:Helvetica Neue, Helvetica, Arial;")
+          | It looks like the Typekit fonts didn't load... 
+          br
+          | Make sure you are viewing this styleguide on a server, not just using the "file://" protocol.
+          br
+          br
+          | If you're a <strong>Python</strong>ista:
+          pre python -m SimpleHTTPServer 8000
+          | then visit 
+          a(href="http://localhost:8000/") http://localhost:8000
+          | &nbsp;in a browser
+          br
+          hr
+          | If you prefer <strong>nodejs</strong>:
+          pre npm install -g serve
+          pre serve
+          | then visit 
+          a(href="http://localhost:3000/") http://localhost:3000
+          | &nbsp;in a browser
+        
     header.title
       small v1.0.1 05/27/2015
         .changelog
@@ -22,7 +54,7 @@ html(lang="en")
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quos sed accusamus rem itaque sit, cupiditate exercitationem. Maxime eveniet necessitatibus quibusdam ea, quia dignissimos blanditiis porro reprehenderit eius doloribus laborum!
       h1.head MAKETIME PATTERN LIBRARY
       a(href="").related.
-        writing style guide &rsaquo;
+        writing style guide &rsaquo; 
       hr
       nav#toc
         ul.toc__level-one
