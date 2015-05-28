@@ -1,0 +1,100 @@
+@mixin btn-states($state,$bgc,$tc:inherit,$bc:inherit){
+	@if $state == hover {
+		&:hover,&.hover{
+			background-color:$bgc;
+			color:$tc;
+			border-color:$bc;
+		}
+	} @else if $state == focus {
+		&:focus,&.focus{
+			background-color:$bgc;
+			color:$tc;
+			border-color:$bc;
+		}	
+	} @else if $state == active {
+		&:active,&.active{
+			background-color:$bgc;
+			color:$tc;
+			border-color:$bc;
+		}
+	} @else if $state == disabled {
+		&[disabled="disabled"]{
+			background-color:$bgc;
+			color:$tc;
+			border-color:$bc;
+		}
+	}
+}
+
+button{
+	font-family:$din;
+	text-transform:uppercase;
+	font-weight:normal;
+	letter-spacing:0.5px;
+	padding:10px 16px;
+	border-radius:0;
+}
+
+$btn-disabled-border: $grey-light;
+$btn-disabled-text: $grey;
+$btn-disabled-bg: $grey-light;
+
+$btn-primary-border:	$green;
+$btn-primary-border-on:	saturate(darken($green,5),5);
+$btn-primary-bg:		$green;
+$btn-primary-bg-on:		saturate(darken($green,5),5);
+$btn-primary-text:		#000000;
+$btn-primary-text-on:	rgba(0,0,0,0.5);
+
+$btn-grey-border:		$grey-lighter;
+$btn-grey-border-on:	$grey-light;
+$btn-grey-bg:			$grey-lighter;
+$btn-grey-bg-on:		$grey-light;
+$btn-grey-text:			#000000;
+$btn-grey-text-on:		rgba(0,0,0,0.5);
+
+$btn-ghost-border:		$green;
+$btn-ghost-border-on:	darken($green,5);
+$btn-ghost-bg:			transparentize($green,1);
+$btn-ghost-bg-on:		$green;
+$btn-ghost-bg-click: 	darken($green,5);
+$btn-ghost-text:		$green;
+$btn-ghost-text-on:		#000000;
+$btn-ghost-text-click: 	rgba(0,0,0,0.5);
+
+.btn{
+	outline:none;
+	transition:
+		background-color 	0.15s ease,
+		color 				0.15s ease,
+		border-color 		0.15s ease;
+	border-width:3px;
+	border-style:solid;
+	&.btn-primary{
+		background-color: 	$btn-primary-bg;
+		border-color: 		$btn-primary-border;
+		color: 				$btn-primary-text;
+		@include btn-states(hover, 	$btn-primary-bg, $btn-primary-text, $btn-primary-border-on);
+		@include btn-states(active, $btn-primary-bg-on, $btn-primary-text-on, $btn-primary-border-on);
+		@include btn-states(disabled, $btn-disabled-bg, $btn-disabled-text, $btn-disabled-border);
+	}
+	&.btn-grey{
+		background-color: 	$btn-grey-bg;
+		border-color: 		$btn-grey-border;
+		color: 				$btn-grey-text;
+		@include btn-states(hover, 	$btn-grey-bg, $btn-grey-text, $btn-grey-border-on);
+		@include btn-states(active, $btn-grey-bg-on, $btn-grey-text-on, $btn-grey-border-on);
+		@include btn-states(disabled, $btn-disabled-bg, $btn-disabled-text, $btn-disabled-border);
+	}
+	&.btn-ghost{
+		background-color: 	$btn-ghost-bg;
+		border-color: 		$btn-ghost-border;
+		color: 				$btn-ghost-text;
+		@include btn-states(hover, 	$btn-ghost-bg-on, $btn-ghost-text-on, $btn-ghost-border);
+		@include btn-states(active, $btn-ghost-bg-click, $btn-ghost-text-click, $btn-ghost-border-on);
+		@include btn-states(disabled, transparent, transparentize($btn-disabled-text,0.5), transparentize($btn-disabled-border,0.5));
+	}
+	&.btn-black{
+
+	}
+}
